@@ -6,6 +6,10 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
+> [!Note]
+>
+> This is a personal fork of [antfu/starter-monorepo](https://github.com/antfu/starter-monorepo) with some customizations.
+
 _description_
 
 ## Sponsors
