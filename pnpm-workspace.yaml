@@ -3,6 +3,7 @@ packages:
   - docs
   - packages/*
   - examples/*
+
 catalogs:
   cli:
     '@antfu/eslint-config': ^5.4.1
@@ -28,6 +29,9 @@ catalogs:
     '@types/node': ^24.7.0
   utils:
     tinyexec: ^1.0.1
+
 onlyBuiltDependencies:
   - esbuild
   - simple-git-hooks
+
+verifyDepsBeforeRun: install
