@@ -35,3 +35,4 @@ onlyBuiltDependencies:
   - simple-git-hooks
 
 verifyDepsBeforeRun: install
+ignoreWorkspaceRootCheck: true
