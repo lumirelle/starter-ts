@@ -22,13 +22,13 @@ catalogs:
   inlined:
     '@antfu/utils': ^9.3.0
   testing:
-    vitest: ^4.0.5
+    '@vitest/coverage-v8': ^4.0.6
+    tinyexec: ^1.0.1
+    vitest: ^4.0.6
     vitest-package-exports: ^0.1.1
     yaml: ^2.8.1
   types:
     '@types/node': ^24.9.2
-  utils:
-    tinyexec: ^1.0.1
 
 ignoreWorkspaceRootCheck: true
 
