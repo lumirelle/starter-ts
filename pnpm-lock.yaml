@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 catalogs:
-  cli:
+  dev:
     '@antfu/eslint-config':
       specifier: ^6.1.0
       version: 6.1.0
@@ -75,10 +75,10 @@ importers:
   .:
     devDependencies:
       '@antfu/eslint-config':
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 6.1.0(@vue/compiler-sfc@3.5.13)(eslint-plugin-format@1.0.2(eslint@9.38.0(jiti@2.6.1)))(eslint@9.38.0(jiti@2.6.1))(typescript@5.9.3)(vitest@4.0.6(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(tsx@4.20.6)(yaml@2.8.1))
       '@antfu/ni':
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 27.0.1
       '@antfu/utils':
         specifier: catalog:inlined
@@ -90,40 +90,40 @@ importers:
         specifier: catalog:testing
         version: 4.0.6(vitest@4.0.6(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(tsx@4.20.6)(yaml@2.8.1))
       bumpp:
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 10.3.1(magicast@0.3.5)
       czg:
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 1.12.0
       eslint:
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 9.38.0(jiti@2.6.1)
       eslint-plugin-format:
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 1.0.2(eslint@9.38.0(jiti@2.6.1))
       lint-staged:
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 16.2.6
       simple-git-hooks:
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 2.13.1
       taze:
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 19.9.0
       tinyexec:
         specifier: catalog:testing
         version: 1.0.1
       tsdown:
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 0.15.12(typescript@5.9.3)
       tsx:
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 4.20.6
       typescript:
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 5.9.3
       vite:
-        specifier: catalog:cli
+        specifier: catalog:dev
         version: 7.1.12(@types/node@24.9.2)(jiti@2.6.1)(tsx@4.20.6)(yaml@2.8.1)
       vitest:
         specifier: catalog:testing
