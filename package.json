@@ -2,7 +2,7 @@
   "name": "pkg-placeholder",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.21.0",
   "description": "_description_",
   "author": "Lumirelle <shabbyacc@outlook.com>",
   "license": "MIT",
@@ -16,12 +16,12 @@
   "keywords": [],
   "sideEffects": false,
   "exports": {
-    ".": "./dist/index.js",
+    ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist"
   ],
