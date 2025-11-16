@@ -23,7 +23,7 @@ _description_
 
 ## License
 
-[MIT](./LICENSE) License © [Lumirelle](https://github.com/Lumirelle)
+[MIT](./LICENSE.md) License © [Lumirelle](https://github.com/Lumirelle)
 
 <!-- Badges -->
 
@@ -38,4 +38,4 @@ _description_
 [codecov-src]: https://img.shields.io/codecov/c/gh/lumirelle/pkg-placeholder/main?style=flat&colorA=18181B&colorB=F0DB4F
 [codecov-href]: https://codecov.io/gh/lumirelle/pkg-placeholder
 [license-src]: https://img.shields.io/github/license/lumirelle/pkg-placeholder.svg?style=flat&colorA=18181B&colorB=F0DB4F
-[license-href]: https://github.com/lumirelle/pkg-placeholder/blob/main/LICENSE
+[license-href]: https://github.com/lumirelle/pkg-placeholder/blob/main/LICENSE.md
