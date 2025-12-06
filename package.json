@@ -44,25 +44,24 @@
     ],
     "catalogs": {
       "dev": {
-        "@antfu/eslint-config": "^6.2.0",
-        "bumpp": "^10.3.1",
+        "@antfu/eslint-config": "^6.4.2",
+        "bumpp": "^10.3.2",
         "czg": "^1.12.0",
         "eslint": "^9.39.1",
-        "eslint-plugin-format": "^1.0.2",
+        "eslint-plugin-format": "^1.1.0",
         "lint-staged": "^16.2.7",
-        "simple-git-hooks": "^2.13.1",
-        "taze": "^19.9.0",
-        "tsdown": "^0.16.6",
+        "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
+        "taze": "^19.9.2",
+        "tsdown": "^0.17.0",
         "typescript": "^5.9.3",
-        "vite": "^7.2.4"
+        "vite": "^7.2.6"
       },
       "inlined": {
         "@antfu/utils": "^9.3.0"
       },
       "testing": {
-        "tinyexec": "^1.0.2",
         "vitest-package-exports": "^0.1.1",
-        "yaml": "^2.8.1"
+        "yaml": "^2.8.2"
       },
       "types": {
         "@types/bun": "^1.3.3"
@@ -80,7 +79,6 @@
     "lint-staged": "catalog:dev",
     "simple-git-hooks": "catalog:dev",
     "taze": "catalog:dev",
-    "tinyexec": "catalog:testing",
     "tsdown": "catalog:dev",
     "typescript": "catalog:dev",
     "vite": "catalog:dev",
