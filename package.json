@@ -28,12 +28,12 @@
     "prepare": "simple-git-hooks",
     "dev": "tsdown --watch",
     "build": "tsdown",
-    "start": "bun src/index.ts",
+    "start": "bun run src/index.ts",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "bun test",
     "prepublishOnly": "bun run build",
-    "prerelease": "bun run test run && bun run typecheck",
+    "prerelease": "bun run test && bun run typecheck",
     "release": "bumpp"
   },
   "workspaces": {
@@ -86,7 +86,7 @@
     "yaml": "catalog:testing"
   },
   "simple-git-hooks": {
-    "pre-commit": "na exec lint-staged"
+    "pre-commit": "bun run lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
