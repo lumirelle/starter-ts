@@ -1,0 +1,11 @@
+{
+  "name": "pkg-placeholder",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "play": "bun ./index.ts"
+  },
+  "devDependencies": {
+    "pkg-placeholder": "workspace:*"
+  }
+}
