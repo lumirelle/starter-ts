@@ -24,4 +24,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: bun install --frozen-lockfile
-      - run: bun publish
+      - run: bunx npm@latest publish --access public
