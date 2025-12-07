@@ -28,7 +28,7 @@
     "prepare": "simple-git-hooks",
     "dev": "tsdown --watch",
     "build": "tsdown",
-    "start": "bun run src/index.ts",
+    "start": "bun run ./src/index.ts",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "bun test",
