@@ -25,16 +25,16 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "simple-git-hooks",
-    "dev": "tsdown --watch",
-    "build": "tsdown",
+    "prepare": "bun run -b simple-git-hooks",
+    "dev": "bun run -b tsdown --watch",
+    "build": "bun run -b tsdown",
     "start": "bun run ./src/index.ts",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "bun run -b tsc --noEmit",
     "test": "bun test",
     "prepublishOnly": "bun run build",
     "prerelease": "bun run test && bun run typecheck",
-    "release": "bumpp"
+    "release": "bun run -b bumpp"
   },
   "workspaces": {
     "packages": [

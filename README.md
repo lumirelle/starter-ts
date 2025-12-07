@@ -11,12 +11,22 @@
 >
 > `main` branch of this starter is currently migrate to [bun](https://bun.com/), if you want to use `nodejs` version, please check out the [`nodejs` branch](https://github.com/lumirelle/starter-ts/tree/nodejs).
 >
+> Why? Just see the benchmark results under [the `/benchmark` folder](./benchmark).
+>
 > Migration progress:
 >
 > - [x] Package Manager: `pnpm` -> `bun`
 > - [ ] Build Tool: Still using `rolldown` with `typescript`.
 > - [x] Test Runner: `vitest` -> `bun`
-> - [ ] Runtime: Still using bun's `nodejs` runtime.
+> - [ ] Runtime: Partial using `bun` runtime, eslint is still using `nodejs` runtime. How to check?
+>
+>  Add the following code at begin of the running script under `node_modules/`:
+>
+>   ```ts
+>   console.log(process.execPath)
+>   console.log('Node.js version:', process.version)
+>   console.log('Bun detected:', typeof Bun !== 'undefined')
+>   ```
 
 > [!Note]
 >
