@@ -10,6 +10,13 @@
 > [!Caution]
 >
 > `main` branch of this starter is currently migrate to [bun](https://bun.com/), if you want to use `nodejs` version, please check out the [`nodejs` branch](https://github.com/lumirelle/starter-ts/tree/nodejs).
+>
+> Migration progress:
+>
+> - [x] Package Manager: `pnpm` -> `bun`
+> - [ ] Build Tool: Still using `rolldown` with `typescript`.
+> - [x] Test Runner: `vitest` -> `bun`
+> - [ ] Runtime: Still using bun's `nodejs` runtime.
 
 > [!Note]
 >
