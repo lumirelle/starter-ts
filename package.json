@@ -86,7 +86,7 @@
     "yaml": "catalog:testing"
   },
   "simple-git-hooks": {
-    "pre-commit": "bun run lint-staged"
+    "pre-commit": "bun run -b lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
