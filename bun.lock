@@ -9,7 +9,6 @@
         "@antfu/utils": "catalog:inlined",
         "@types/bun": "catalog:types",
         "bumpp": "catalog:dev",
-        "czg": "catalog:dev",
         "eslint": "catalog:dev",
         "eslint-plugin-format": "catalog:dev",
         "lint-staged": "catalog:dev",
@@ -32,7 +31,6 @@
     "dev": {
       "@antfu/eslint-config": "^6.6.1",
       "bumpp": "^10.3.2",
-      "czg": "^1.12.0",
       "eslint": "^9.39.1",
       "eslint-plugin-format": "^1.1.0",
       "lint-staged": "^16.2.7",
@@ -406,8 +404,6 @@
     "cross-spawn": ["cross-spawn@7.0.6", "", { "dependencies": { "path-key": "^3.1.0", "shebang-command": "^2.0.0", "which": "^2.0.1" } }, "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA=="],
 
     "cssesc": ["cssesc@3.0.0", "", { "bin": { "cssesc": "bin/cssesc" } }, "sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg=="],
-
-    "czg": ["czg@1.12.0", "", { "bin": { "czg": "bin/index.js", "git-czg": "bin/index.js" } }, "sha512-LGltcoZ5m7vhe3WNw16QXqd5WurnHegx9V15MwZJtFAU2AVCYLCqDbwxPUgZOnAcdzzooq33ONcU148HOQsjdA=="],
 
     "debug": ["debug@4.4.3", "", { "dependencies": { "ms": "^2.1.3" } }, "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA=="],
 
