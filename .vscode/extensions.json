@@ -1,9 +1,10 @@
 {
   // cspell:disable
   "recommendations": [
-    "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",
-    "jgclark.vscode-todo-highlight",
+    "oven.bun-vscode",
+    "typescriptteam.native-preview",
+    "dbaeumer.vscode-eslint",
     "antfu.pnpm-catalog-lens"
   ]
 }
