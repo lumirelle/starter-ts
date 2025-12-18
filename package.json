@@ -84,6 +84,6 @@
     "pre-commit": "bun run lint-staged"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "*": "bun run eslint --fix"
   }
 }

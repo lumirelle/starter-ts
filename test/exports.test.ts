@@ -1,6 +1,6 @@
-import { join } from 'node:path'
 import { YAML } from 'bun'
 import { describe, expect, it } from 'bun:test'
+import { join } from 'node:path'
 import { getPackageExportsManifest } from 'vitest-package-exports'
 
 // TODO: Remove this when you are ready for the first release
