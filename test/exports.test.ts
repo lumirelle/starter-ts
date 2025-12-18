@@ -1,7 +1,7 @@
 import { join } from 'node:path'
+import { YAML } from 'bun'
 import { describe, expect, it } from 'bun:test'
 import { getPackageExportsManifest } from 'vitest-package-exports'
-import yaml from 'yaml'
 
 // TODO: Remove this when you are ready for the first release
 const IS_READY = false
@@ -27,7 +27,7 @@ describe.if(IS_READY)('exports-snapshot', async () => {
         importMode: 'src',
         cwd: pkgPath,
       })
-      expect(yaml.stringify(manifest.exports))
+      expect(YAML.stringify(manifest.exports))
         // TODO: Waiting for the api support, see https://github.com/oven-sh/bun/issues/13096
         // .toMatchFileSnapshot(`./exports/${pkg.name}.yaml`)
         .toMatchInlineSnapshot(``)
