@@ -16,11 +16,11 @@
 > Migration progress:
 >
 > - [x] Package Manager: `pnpm` -> `bun`
-> - [ ] Build Tool: Still using `rolldown` with `typescript`.
+> - [ ] Build Tool: Still using `rolldown` with `typescript`
 > - [x] Test Runner: `vitest` -> `bun`
-> - [ ] Runtime: Partial using `bun` runtime, eslint is still using `nodejs` runtime. How to check?
+> - [x] Runtime: `nodejs` -> `bun`
 >
->  Add the following code at begin of the running script under `node_modules/`:
+>   How to Check? Add the following code at begin of the running script:
 >
 >   ```ts
 >   console.log(process.execPath)

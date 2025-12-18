@@ -25,17 +25,17 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "bun run -b simple-git-hooks",
-    "dev": "bun run -b tsdown --watch",
-    "build": "bun run -b tsdown",
+    "prepare": "bun run simple-git-hooks",
+    "dev": "bun run tsdown --watch",
+    "build": "bun run tsdown",
     "start": "bun run ./src/index.ts",
     "play": "bun run --cwd playground play",
-    "lint": "eslint",
-    "typecheck": "bun run -b tsc --noEmit",
+    "lint": "bun run eslint",
+    "typecheck": "bun run tsc --noEmit",
     "test": "bun test",
     "prepublishOnly": "bun run build",
     "prerelease": "bun run test && bun run typecheck",
-    "release": "bun run -b bumpp"
+    "release": "bun run bumpp"
   },
   "workspaces": {
     "packages": [
@@ -83,7 +83,7 @@
     "yaml": "catalog:testing"
   },
   "simple-git-hooks": {
-    "pre-commit": "bun run -b lint-staged"
+    "pre-commit": "bun run lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
