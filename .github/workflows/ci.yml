@@ -21,7 +21,7 @@ jobs:
       - run: nr build
       - run: nr lint
       - run: nr typecheck
-      - run: nr knip
+      - run: nr unusecheck
   test:
     runs-on: ${{ matrix.os }}
     strategy:

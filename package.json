@@ -31,7 +31,7 @@
     "play": "bun run --cwd playground play",
     "lint": "bun run eslint",
     "typecheck": "bun run tsc --noEmit",
-    "knip": "bun run knip",
+    "unusecheck": "bun run knip",
     "test": "bun test",
     "prepublishOnly": "bun run build",
     "prerelease": "bun run test && bun run typecheck",
