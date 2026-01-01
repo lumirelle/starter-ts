@@ -13,7 +13,6 @@
   },
   "bugs": "https://github.com/lumirelle/pkg-placeholder/issues",
   "keywords": [],
-  "sideEffects": false,
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
@@ -38,11 +37,7 @@
     "release": "bun run bumpp"
   },
   "workspaces": {
-    "packages": [
-      "playground",
-      "packages/*",
-      "examples/*"
-    ],
+    "packages": [],
     "catalogs": {
       "dev": {
         "@antfu/eslint-config": "^6.7.3",
@@ -51,9 +46,13 @@
         "eslint-plugin-format": "^1.1.0",
         "lint-staged": "^16.2.7",
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
-        "tsdown": "^0.18.4",
         "typescript": "^5.9.3",
         "vite": "^7.3.0"
+      },
+      "build": {
+        "@arethetypeswrong/core": "^0.18.2",
+        "publint": "^0.3.16",
+        "tsdown": "^0.18.4"
       },
       "inlined": {
         "@antfu/utils": "^9.3.0"
@@ -69,13 +68,15 @@
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
     "@antfu/utils": "catalog:inlined",
+    "@arethetypeswrong/core": "catalog:build",
     "@types/bun": "catalog:types",
     "bumpp": "catalog:dev",
     "eslint": "catalog:dev",
     "eslint-plugin-format": "catalog:dev",
     "lint-staged": "catalog:dev",
+    "publint": "catalog:build",
     "simple-git-hooks": "catalog:dev",
-    "tsdown": "catalog:dev",
+    "tsdown": "catalog:build",
     "typescript": "catalog:dev",
     "vite": "catalog:dev",
     "vitest-package-exports": "catalog:testing"
