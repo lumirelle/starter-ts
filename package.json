@@ -32,9 +32,10 @@
     "lint": "bun run eslint",
     "typecheck": "bun run tsc --noEmit",
     "usecheck": "bun run knip",
+    "check": "bun run lint && bun run typecheck && bun run usecheck",
     "test": "bun test",
     "prepublishOnly": "bun run build",
-    "prerelease": "bun run test && bun run typecheck",
+    "prerelease": "bun run check && bun run test",
     "release": "bun run bumpp"
   },
   "workspaces": {
