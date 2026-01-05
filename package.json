@@ -7,6 +7,9 @@
   "license": "MIT",
   "funding": "https://github.com/sponsors/lumirelle",
   "homepage": "https://github.com/lumirelle/pkg-placeholder#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lumirelle/pkg-placeholder.git"
@@ -28,14 +31,12 @@
     "dev": "bun run tsdown --watch",
     "build": "bun run tsdown",
     "start": "bun run ./src/index.ts",
-    "play": "bun run --cwd playground play",
     "lint": "bun run eslint",
     "typecheck": "bun run tsc --noEmit",
-    "usecheck": "bun run knip",
-    "check": "bun run lint && bun run typecheck && bun run usecheck",
+    "usagecheck": "bun run knip",
+    "check": "bun run lint && bun run typecheck && bun run usagecheck",
     "test": "bun test",
-    "prepublishOnly": "bun run build",
-    "prerelease": "bun run check && bun run test",
+    "prerelease": "bun run build && bun run check && bun run test",
     "release": "bun run bumpp"
   },
   "workspaces": {
