@@ -1,9 +1,8 @@
-/* eslint-disable perfectionist/sort-imports */
 import { YAML } from 'bun'
-import { workspaces } from '../package.json'
 import { describe, expect, it } from 'bun:test'
 import { join } from 'node:path'
 import { getPackageExportsManifest } from 'vitest-package-exports'
+import { workspaces } from '../package.json'
 
 // TODO: Remove this when you are ready for the first release
 const IS_READY = false

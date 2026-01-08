@@ -7,15 +7,15 @@
   "license": "MIT",
   "funding": "https://github.com/sponsors/lumirelle",
   "homepage": "https://github.com/lumirelle/pkg-placeholder#readme",
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lumirelle/pkg-placeholder.git"
   },
   "bugs": "https://github.com/lumirelle/pkg-placeholder/issues",
   "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
