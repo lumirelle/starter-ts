@@ -11,7 +11,7 @@
 >
 > `main` branch of this starter is currently migrate to [bun](https://bun.com/), if you want to use `nodejs` version, please check out the [`nodejs` branch](https://github.com/lumirelle/starter-ts/tree/nodejs).
 >
-> Why? Just see the benchmark results under [the `/benchmark` folder](./benchmark).
+> Why? Because Bun has much shorter start-up time than Node.js, see the benchmark results under [the `/benchmark` folder](./benchmark) for details.
 >
 > Migration progress:
 >

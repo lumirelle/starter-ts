@@ -36,11 +36,11 @@
     "usagecheck": "bun run knip",
     "check": "bun run lint && bun run typecheck && bun run usagecheck",
     "test": "bun test",
-    "prerelease": "bun run build && bun run check && bun run test",
+    "prerelease": "bun run build --attw.profile esm-only --publint && bun run check && bun run test",
     "release": "bun run bumpp"
   },
   "workspaces": {
-    "packages": [],
+    "packages": ["."],
     "catalogs": {
       "dev": {
         "@antfu/eslint-config": "^6.7.3",

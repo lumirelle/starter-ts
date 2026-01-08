@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'bun:test'
 
-describe('should', () => {
-  it('exported', () => {
+describe('test', () => {
+  it('should pass', () => {
     expect(1).toEqual(1)
   })
 })
