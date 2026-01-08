@@ -20,7 +20,7 @@
 > - [x] Test Runner: `vitest` -> `bun`
 > - [x] Runtime: `nodejs` -> `bun`
 >
->   How to Check? Add the following code at begin of the running script:
+>   How to check? Add the following code at begin of the running script:
 >
 >   ```ts
 >   console.log(process.execPath)
