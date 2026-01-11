@@ -31,7 +31,7 @@
     "dev": "bun run tsdown --watch",
     "build": "bun run tsdown",
     "start": "bun run ./src/index.ts",
-    "lint": "bun run eslint",
+    "lint": "bun run eslint .",
     "typecheck": "bun run tsc --noEmit",
     "usagecheck": "bun run knip",
     "check": "bun run lint && bun run typecheck && bun run usagecheck",
