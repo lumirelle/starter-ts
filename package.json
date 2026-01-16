@@ -47,7 +47,7 @@
         "typescript": "^5.9.3"
       },
       "build": {
-        "oxc-transform": "^0.108.0"
+        "@lumirelle/build-with-bun": "^0.0.1"
       },
       "inlined": {
         "@antfu/utils": "^9.3.0"
@@ -74,6 +74,7 @@
     "@antfu/eslint-config": "catalog:check",
     "@antfu/utils": "catalog:inlined",
     "@arethetypeswrong/cli": "catalog:check",
+    "@lumirelle/build-with-bun": "catalog:build",
     "@types/bun": "catalog:types",
     "@types/node": "catalog:types",
     "bumpp": "catalog:dev",
@@ -81,7 +82,6 @@
     "eslint-plugin-format": "catalog:check",
     "knip": "catalog:check",
     "lint-staged": "catalog:check",
-    "oxc-transform": "catalog:build",
     "publint": "catalog:check",
     "simple-git-hooks": "catalog:dev",
     "typescript": "catalog:dev",
