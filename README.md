@@ -13,7 +13,7 @@
 >
 > Why? Because Bun has much better performance than Node.js, see some simple benchmark results under [the `/benchmark` folder](./benchmark), or just visit [Bun's official documentation](https://bun.com/docs).
 >
->   Want to know if the `Bun` runtime is being used? Add the following code into the code:
+>   Want to know if the `Bun` runtime is being used? Add following into the code:
 >
 >   ```ts
 >   console.log(process.execPath)
