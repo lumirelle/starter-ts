@@ -17,25 +17,26 @@
     "access": "public"
   },
   "exports": {
-    ".": "./dist/index.mjs",
+    ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
-  "types": "./dist/index.d.mts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "prepare": "bun run simple-git-hooks",
-    "dev": "bun run tsdown --watch",
-    "build": "bun run tsdown",
-    "start": "bun run ./src/index.ts",
-    "lint": "bun run eslint .",
-    "typecheck": "bun run tsc --noEmit",
-    "usagecheck": "bun run knip",
-    "check": "bun run lint && bun run typecheck && bun run usagecheck",
+    "prepare": "bun simple-git-hooks",
+    "dev": "bun ./scripts/dev.ts",
+    "build": "bun ./scripts/build.ts",
+    "start": "bun ./src/index.ts",
+    "lint": "bun eslint .",
+    "typecheck": "bun tsc --noEmit",
+    "usagecheck": "bun knip",
+    "distcheck": "bun attw --pack --profile esm-only && bun publint",
+    "check": "bun run lint && bun run typecheck && bun run usagecheck && bun run distcheck",
     "test": "bun test",
-    "prerelease": "bun run build --attw.profile esm-only --publint && bun run check && bun run test",
-    "release": "bun run bumpp"
+    "prerelease": "bun run build && bun run check && bun run test",
+    "release": "bun bumpp"
   },
   "workspaces": {
     "packages": ["."],
@@ -51,9 +52,9 @@
         "typescript": "^5.9.3"
       },
       "build": {
-        "@arethetypeswrong/core": "^0.18.2",
-        "publint": "^0.3.16",
-        "tsdown": "^0.19.0"
+        "@arethetypeswrong/cli": "^0.18.2",
+        "oxc-transform": "^0.108.0",
+        "publint": "^0.3.16"
       },
       "inlined": {
         "@antfu/utils": "^9.3.0"
@@ -70,7 +71,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
     "@antfu/utils": "catalog:inlined",
-    "@arethetypeswrong/core": "catalog:build",
+    "@arethetypeswrong/cli": "catalog:build",
     "@types/bun": "catalog:types",
     "@types/node": "catalog:types",
     "bumpp": "catalog:dev",
@@ -78,16 +79,16 @@
     "eslint-plugin-format": "catalog:dev",
     "knip": "catalog:dev",
     "lint-staged": "catalog:dev",
+    "oxc-transform": "catalog:build",
     "publint": "catalog:build",
     "simple-git-hooks": "catalog:dev",
-    "tsdown": "catalog:build",
     "typescript": "catalog:dev",
     "vitest-package-exports": "catalog:testing"
   },
   "simple-git-hooks": {
-    "pre-commit": "bun run lint-staged"
+    "pre-commit": "bun lint-staged"
   },
   "lint-staged": {
-    "*": "bun run eslint --fix"
+    "*": "bun eslint --fix"
   }
 }

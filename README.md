@@ -15,9 +15,9 @@
 >
 > Migration progress:
 >
-> - [x] Package Manager: `pnpm` -> `bun`
-> - [ ] Build Tool: Still using `rolldown` with `typescript`
-> - [x] Test Runner: `vitest` -> `bun`
+> - [x] Package Manager: `pnpm` -> `bun pm`
+> - [x] Build Tool: `tsdown` with `typescript` -> `bun build`
+> - [x] Test Runner: `vitest` -> `bun test`
 > - [x] Runtime: `nodejs` -> `bun`
 >
 >   How to check? Add the following code at begin of the running script:
