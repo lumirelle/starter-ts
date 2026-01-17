@@ -47,7 +47,7 @@
         "typescript": "^5.9.3"
       },
       "build": {
-        "@lumirelle/build-with-bun": "^0.0.1"
+        "@lumirelle/build-with-bun": "^0.0.3"
       },
       "inlined": {
         "@antfu/utils": "^9.3.0"
@@ -65,8 +65,7 @@
         "vitest-package-exports": "^1.1.2"
       },
       "types": {
-        "@types/bun": "^1.3.6",
-        "@types/node": "^25.0.9"
+        "@types/bun": "^1.3.6"
       }
     }
   },
@@ -76,7 +75,6 @@
     "@arethetypeswrong/cli": "catalog:check",
     "@lumirelle/build-with-bun": "catalog:build",
     "@types/bun": "catalog:types",
-    "@types/node": "catalog:types",
     "bumpp": "catalog:dev",
     "eslint": "catalog:check",
     "eslint-plugin-format": "catalog:check",
