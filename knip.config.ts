@@ -5,4 +5,4 @@ export default {
   ignoreDependencies: [
     '@antfu/utils',
   ],
-} satisfies KnipConfig
+} as KnipConfig
