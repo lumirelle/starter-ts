@@ -4,9 +4,11 @@
   "workspaces": {
     "": {
       "name": "pkg-placeholder",
+      "dependencies": {
+        "@antfu/utils": "catalog:prod",
+      },
       "devDependencies": {
         "@antfu/eslint-config": "catalog:check",
-        "@antfu/utils": "catalog:inlined",
         "@arethetypeswrong/cli": "catalog:check",
         "@types/bun": "catalog:types",
         "bumpp": "catalog:dev",
@@ -40,7 +42,7 @@
       "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
       "typescript": "^5.9.3",
     },
-    "inlined": {
+    "prod": {
       "@antfu/utils": "^9.3.0",
     },
     "test": {
