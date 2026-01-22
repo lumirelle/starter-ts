@@ -13,17 +13,23 @@
   },
   "bugs": "https://github.com/lumirelle/pkg-placeholder/issues",
   "keywords": [],
-  "publishConfig": {
-    "access": "public"
-  },
   "exports": {
-    ".": "./dist/index.js",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
     "./package.json": "./package.json"
   },
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepare": "bun simple-git-hooks",
     "dev": "bunup --watch",
@@ -39,7 +45,9 @@
     "release": "bun bumpp"
   },
   "workspaces": {
-    "packages": ["."],
+    "packages": [
+      "."
+    ],
     "catalogs": {
       "prod": {
         "@antfu/utils": "^9.3.0"
