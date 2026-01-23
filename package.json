@@ -47,7 +47,7 @@
       "."
     ],
     "catalogs": {
-      "prod": {
+      "inlined": {
         "@antfu/utils": "^9.3.0"
       },
       "dev": {
@@ -75,11 +75,9 @@
       }
     }
   },
-  "dependencies": {
-    "@antfu/utils": "catalog:prod"
-  },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:check",
+    "@antfu/utils": "catalog:inlined",
     "@arethetypeswrong/cli": "catalog:check",
     "@types/bun": "catalog:types",
     "bumpp": "catalog:dev",
