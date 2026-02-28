@@ -1,8 +1,6 @@
+/* eslint perfectionist/sort-objects: "error" */
 import type { KnipConfig } from 'knip'
 
 export default {
-  // @keep-sorted
-  ignoreDependencies: [
-    '@antfu/utils',
-  ],
-} as KnipConfig
+  ignoreDependencies: ['@antfu/utils', '@arethetypeswrong/cli', 'publint'],
+} satisfies KnipConfig
