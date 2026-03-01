@@ -1,4 +1,4 @@
-import { Glob, YAML } from 'bun'
+import { file, Glob, write, YAML } from 'bun'
 import { describe, expect, it } from 'bun:test'
 import fs from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -17,7 +17,9 @@ describe.todoIf(version === '0.0.0')('exports-snapshot', async () => {
         name?: string
         private?: boolean
       }
-      if (!pkgJson.name || pkgJson.private) continue
+      if (!pkgJson.name || pkgJson.private) {
+        continue
+      }
       it(`${pkgJson.name}`, async () => {
         const manifest = await getPackageExportsManifest({
           importMode: 'src',
@@ -29,8 +31,8 @@ describe.todoIf(version === '0.0.0')('exports-snapshot', async () => {
         pkgPaths[pkgPaths.length - 1] += '.yaml'
         const output = join(root, 'test', 'exports', ...pkgPaths)
         fs.mkdirSync(dirname(output), { recursive: true })
-        await Bun.write(output, exports)
-        expect(exports).toEqual(await Bun.file(output).text())
+        await write(output, exports)
+        expect(exports).toEqual(await file(output).text())
       })
     }
   }
