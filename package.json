@@ -42,6 +42,7 @@
         "nano-staged": "^0.9.0",
         "oxfmt": "^0.35.0",
         "oxlint": "^1.50.0",
+        "oxlint-tsgolint": "^0.15.0",
         "publint": "^0.3.17"
       },
       "test": {
@@ -70,8 +71,8 @@
     "build": "bunup",
     "start": "bun ./src/index.ts",
     "format": "bunx oxfmt",
-    "lint": "bun --parallel oxlint eslint",
-    "lint:fix": "bun --sequential 'oxlint --fix' 'eslint --fix'",
+    "lint": "bun --parallel 'oxlint --type-aware' eslint",
+    "lint:fix": "bun --sequential 'oxlint --type-aware --fix' 'eslint --fix'",
     "check:type": "bun tsgo --noEmit",
     "check:usage": "bun knip",
     "check:dist": "bun --parallel 'attw --pack --profile esm-only' publint",
@@ -94,6 +95,7 @@
     "nano-staged": "catalog:check",
     "oxfmt": "catalog:check",
     "oxlint": "catalog:check",
+    "oxlint-tsgolint": "catalog:check",
     "publint": "catalog:check",
     "simple-git-hooks": "catalog:dev",
     "typescript": "catalog:dev",
@@ -104,7 +106,7 @@
   },
   "nano-staged": {
     "*": [
-      "bun oxlint",
+      "bun oxlint --type-aware",
       "bun eslint",
       "bunx oxfmt --no-error-on-unmatched-pattern"
     ]
