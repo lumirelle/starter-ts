@@ -3,5 +3,4 @@
   "semi": false,
   "singleQuote": true,
   "sortPackageJson": false,
-  "ignorePatterns": ["test/exports/**"],
 }
