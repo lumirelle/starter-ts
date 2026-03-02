@@ -74,7 +74,7 @@
     "lint:fix": "bun --sequential 'oxlint --type-aware --type-check --fix' 'eslint --fix'",
     "check:usage": "bun knip",
     "check:dist": "bun --parallel 'attw --pack --profile esm-only' publint",
-    "check": "bun run --parallel lint check:type check:usage check:dist",
+    "check": "bun run --parallel lint check:usage check:dist",
     "test": "bun test",
     "prerelease": "bun run --sequential build check test",
     "release": "bun bumpp"
