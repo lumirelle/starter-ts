@@ -1,52 +1,25 @@
-import { Glob, YAML } from 'bun'
+import { file, write, YAML } from 'bun'
 import { describe, expect, it } from 'bun:test'
-import fs from 'node:fs/promises'
+import { mkdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { getPackageExportsManifest } from 'vitest-package-exports'
-import { version, workspaces } from '../package.json'
-
-interface PkgJson {
-  name?: string
-  private?: boolean
-}
+import { name, version } from '../package.json'
 
 const root = join(import.meta.dir, '..')
 
-async function collectPackages(): Promise<[string, string][]> {
-  const pkgs: [string, string][] = []
-  /**
-   * FIXME: If `bun` support command like `pnpm ls --only-projects`, we may no longer need this, see https://github.com/oven-sh/bun/issues/25114
-   */
-  for (const pkg of workspaces.packages) {
-    const glob = new Glob(`${pkg}/package.json`)
-    for await (const pkgJsonPath of glob.scan({ cwd: root, absolute: true })) {
-      const pkgJson = await (import(pkgJsonPath) as Promise<{ default: PkgJson }>).then(
-        (m) => m.default,
-      )
-      if (!pkgJson.name || pkgJson.private) {
-        continue
-      }
-      pkgs.push([pkgJson.name, pkgJsonPath])
-    }
-  }
-  return pkgs
-}
-
-const pkgs = await collectPackages()
-
 describe.todoIf(version === '0.0.0')('exports-snapshot', () => {
-  it.each(pkgs)('%s', async (pkgName, pkgJsonPath) => {
+  it(name, async () => {
     const manifest = await getPackageExportsManifest({
-      importMode: 'src',
-      cwd: dirname(pkgJsonPath),
+      importMode: 'package',
+      cwd: root,
     })
     // TODO: Workaround. Bun currently does not support file snapshot like Vitest, see https://github.com/oven-sh/bun/issues/13096
     const exports = YAML.stringify(manifest.exports, null, 2)
-    const pkgPaths = pkgName.split('/')
+    const pkgPaths = name.split('/')
     pkgPaths[pkgPaths.length - 1] += '.yaml'
     const output = join(root, 'test', 'exports', ...pkgPaths)
-    await fs.mkdir(dirname(output), { recursive: true })
-    await fs.writeFile(output, exports)
-    expect(exports).toEqual(await fs.readFile(output, { encoding: 'utf8' }))
+    mkdirSync(dirname(output), { recursive: true })
+    await write(output, exports)
+    expect(exports).toEqual(await file(output).text())
   })
 })

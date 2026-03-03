@@ -28,9 +28,6 @@
     "dist"
   ],
   "workspaces": {
-    "packages": [
-      "."
-    ],
     "catalogs": {
       "inlined": {
         "@antfu/utils": "^9.3.0"
@@ -96,6 +93,7 @@
     "oxfmt": "catalog:check",
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
+    "pkg-placeholder": "file:.",
     "publint": "catalog:check",
     "simple-git-hooks": "catalog:dev",
     "typescript": "catalog:dev",
