@@ -13,6 +13,20 @@
   },
   "bugs": "https://github.com/lumirelle/pkg-placeholder/issues",
   "keywords": [],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "workspaces": {
     "packages": [
       "."
@@ -49,25 +63,14 @@
       }
     }
   },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./package.json": "./package.json"
-  },
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
+    "prepack": "bun run build",
     "prepare": "bun simple-git-hooks",
     "dev": "bunup --watch",
-    "build": "bunup",
+    "build": "bunup --exports",
     "start": "bun ./src/index.ts",
     "format": "bunx oxfmt",
     "lint": "bun --parallel 'oxlint --type-aware --type-check' eslint",
