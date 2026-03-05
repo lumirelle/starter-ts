@@ -39,7 +39,7 @@
         "typescript": "^5.9.3"
       },
       "types": {
-        "@types/bun": "^1.3.7"
+        "@types/bun": "^1.3.10"
       },
       "build": {
         "bunup": "^0.16.20"
@@ -48,12 +48,12 @@
         "@antfu/eslint-config": "^7.2.0",
         "@arethetypeswrong/cli": "^0.18.2",
         "eslint": "^9.39.2",
-        "eslint-plugin-oxlint": "^1.50.0",
+        "eslint-plugin-oxlint": "^1.51.0",
         "knip": "^5.82.1",
         "nano-staged": "^0.9.0",
-        "oxfmt": "^0.35.0",
-        "oxlint": "^1.50.0",
-        "oxlint-tsgolint": "^0.15.0",
+        "oxfmt": "^0.36.0",
+        "oxlint": "^1.51.0",
+        "oxlint-tsgolint": "^0.16.0",
         "publint": "^0.3.18"
       },
       "test": {
@@ -65,19 +65,19 @@
     "access": "public"
   },
   "scripts": {
-    "prepare": "bun simple-git-hooks",
+    "prepare": "simple-git-hooks",
     "dev": "bunup --watch",
     "build": "bunup --exports",
-    "start": "bun ./src/index.ts",
-    "format": "bunx oxfmt",
-    "lint": "bun --parallel 'oxlint --type-aware --type-check' eslint",
-    "lint:fix": "bun --sequential 'oxlint --type-aware --type-check --fix' 'eslint --fix'",
-    "check:usage": "bun knip",
-    "check:dist": "bun --parallel 'attw --pack --profile esm-only' publint",
+    "start": "bun run ./src/index.ts",
+    "format": "oxfmt",
+    "lint": "bun run --parallel 'oxlint --type-aware --type-check' eslint",
+    "lint:fix": "oxlint --type-aware --type-check --fix && eslint --fix",
+    "check:usage": "knip",
+    "check:dist": "bun run --parallel 'attw --pack --profile esm-only' publint",
     "check": "bun run --parallel lint check:usage check:dist",
     "test": "bun test",
-    "prerelease": "bun run --sequential build check test",
-    "release": "bun bumpp"
+    "prerelease": "bun run build && bun run --parallel check test",
+    "release": "bumpp"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:check",
@@ -100,13 +100,13 @@
     "vitest-package-exports": "catalog:test"
   },
   "simple-git-hooks": {
-    "pre-commit": "bun nano-staged"
+    "pre-commit": "bunx nano-staged"
   },
   "nano-staged": {
     "*": [
-      "bun oxlint --type-aware --type-check",
-      "bun eslint",
-      "bunx oxfmt --no-error-on-unmatched-pattern"
+      "oxlint --type-aware --type-check",
+      "eslint",
+      "oxfmt --no-error-on-unmatched-pattern"
     ]
   }
 }
