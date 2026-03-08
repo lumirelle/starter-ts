@@ -45,13 +45,12 @@
         "bunup": "^0.16.20"
       },
       "check": {
-        "@antfu/eslint-config": "^7.2.0",
+        "@antfu/eslint-config": "^7.7.0",
         "@arethetypeswrong/cli": "^0.18.2",
-        "eslint": "^9.39.2",
+        "eslint": "^9.39.4",
         "eslint-plugin-oxlint": "^1.51.0",
-        "knip": "^5.82.1",
+        "knip": "^5.86.0",
         "nano-staged": "^0.9.0",
-        "oxfmt": "^0.36.0",
         "oxlint": "^1.51.0",
         "oxlint-tsgolint": "^0.16.0",
         "publint": "^0.3.18"
@@ -69,12 +68,11 @@
     "dev": "bunup --watch",
     "build": "bunup --exports",
     "start": "bun run ./src/index.ts",
-    "format": "oxfmt",
     "lint": "bun run --parallel 'oxlint --type-aware --type-check' eslint",
     "lint:fix": "oxlint --type-aware --type-check --fix && eslint --fix",
-    "check:usage": "knip",
-    "check:dist": "bun run --parallel 'attw --pack --profile esm-only' publint",
-    "check": "bun run --parallel lint check:usage check:dist",
+    "unused": "knip",
+    "pubcheck": "bun run --parallel 'attw --pack --profile esm-only' publint",
+    "check": "bun run --parallel lint unused pubcheck",
     "test": "bun test",
     "prerelease": "bun run build && bun run --parallel check test",
     "release": "bumpp"
@@ -90,7 +88,6 @@
     "eslint-plugin-oxlint": "catalog:check",
     "knip": "catalog:check",
     "nano-staged": "catalog:check",
-    "oxfmt": "catalog:check",
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
     "pkg-placeholder": "file:.",
@@ -105,8 +102,7 @@
   "nano-staged": {
     "*": [
       "oxlint --type-aware --type-check",
-      "eslint",
-      "oxfmt --no-error-on-unmatched-pattern"
+      "eslint"
     ]
   }
 }
