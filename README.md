@@ -12,14 +12,6 @@
 > `main` branch of this starter is currently migrate to [bun](https://bun.com/), if you want to use `nodejs` version, please check out the [`nodejs` branch](https://github.com/lumirelle/starter-ts/tree/nodejs).
 >
 > Why? Because Bun has much better performance than Node.js, see some simple benchmark results under [the `/benchmark` folder](./benchmark), or just visit [Bun's official documentation](https://bun.com/docs).
->
-> Want to know if the `Bun` runtime is being used? Add following into the code:
->
-> ```ts
-> console.log(process.execPath)
-> console.log('Node.js version:', process.version)
-> console.log('Bun detected:', typeof Bun !== 'undefined')
-> ```
 
 > [!Note]
 >
