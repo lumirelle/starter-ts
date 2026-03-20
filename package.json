@@ -35,6 +35,7 @@
         "@antfu/utils": "^9.3.0"
       },
       "dev": {
+        "@lumirelle/tsconfig": "^0.0.1",
         "bumpp": "^11.0.1",
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
         "typescript": "^5.9.3"
@@ -48,13 +49,13 @@
       "check": {
         "@antfu/eslint-config": "^7.7.3",
         "@arethetypeswrong/cli": "^0.18.2",
-        "@lumirelle/oxlint-config": "^0.0.3",
+        "@lumirelle/oxlint-config": "^0.0.5",
         "eslint": "^10.0.3",
         "eslint-plugin-oxlint": "^1.56.0",
-        "knip": "^5.88.0",
+        "knip": "^6.0.0",
         "nano-staged": "^0.9.0",
         "oxlint": "^1.56.0",
-        "oxlint-tsgolint": "^0.17.0",
+        "oxlint-tsgolint": "0.17.0",
         "publint": "^0.3.18"
       },
       "test": {
@@ -85,6 +86,7 @@
     "@antfu/utils": "catalog:inlined",
     "@arethetypeswrong/cli": "catalog:check",
     "@lumirelle/oxlint-config": "catalog:check",
+    "@lumirelle/tsconfig": "catalog:dev",
     "@types/bun": "catalog:types",
     "bumpp": "catalog:dev",
     "bunup": "catalog:build",
