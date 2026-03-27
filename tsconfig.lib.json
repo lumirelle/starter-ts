@@ -1,0 +1,10 @@
+{
+  "extends": "@lumirelle/tsconfig/ts",
+  "compilerOptions": {
+    "types": ["bun"],
+    "declaration": true,
+    "isolatedDeclarations": true
+  },
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["test/fixture/**/*"]
+}
