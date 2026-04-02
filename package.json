@@ -47,15 +47,15 @@
         "bunup": "^0.16.31"
       },
       "check": {
-        "@antfu/eslint-config": "^7.7.3",
+        "@antfu/eslint-config": "^8.0.0",
         "@arethetypeswrong/cli": "^0.18.2",
-        "@lumirelle/oxlint-config": "^0.0.5",
+        "@lumirelle/oxlint-config": "^0.1.0",
         "eslint": "^10.1.0",
-        "eslint-plugin-oxlint": "^1.57.0",
-        "knip": "^6.0.6",
+        "eslint-plugin-oxlint": "^1.58.0",
+        "knip": "^6.2.0",
         "nano-staged": "^0.9.0",
-        "oxlint": "^1.57.0",
-        "oxlint-tsgolint": "0.17.0",
+        "oxlint": "^1.58.0",
+        "oxlint-tsgolint": "^0.19.0",
         "publint": "^0.3.18"
       },
       "test": {
