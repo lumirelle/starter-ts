@@ -1,0 +1,7 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`exports-snapshot pkg-placeholder 1`] = `
+"".": 
+  one: number
+  two: number"
+`;

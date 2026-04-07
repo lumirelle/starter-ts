@@ -31,9 +31,6 @@
   "workspaces": {
     "packages": [],
     "catalogs": {
-      "inlined": {
-        "@antfu/utils": "^9.3.0"
-      },
       "dev": {
         "@lumirelle/tsconfig": "^0.1.2",
         "bumpp": "^11.0.1",
@@ -83,7 +80,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:check",
-    "@antfu/utils": "catalog:inlined",
     "@arethetypeswrong/cli": "catalog:check",
     "@lumirelle/oxlint-config": "catalog:check",
     "@lumirelle/tsconfig": "catalog:dev",
@@ -96,7 +92,6 @@
     "nano-staged": "catalog:check",
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
-    "pkg-placeholder": "file:.",
     "publint": "catalog:check",
     "simple-git-hooks": "catalog:dev",
     "typescript": "catalog:dev",
