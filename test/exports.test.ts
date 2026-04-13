@@ -1,23 +1,24 @@
 import { describe, expect, it } from 'bun:test'
 import { existsSync } from 'node:fs'
 import { generateApiSnapshot } from 'tsnapi'
-import { exports, name } from '../package.json'
+import { exports, name as pkgName } from '../package.json'
 
-const isDistExists = existsSync('dist')
-const entries = Object.keys(exports).filter(key => !key.endsWith('.json'))
+const testCases = Object.keys(exports).filter(key => !key.endsWith('.json'))
 
-describe('exports-snapshot', () => {
-  it('dist should exist', async () => {
+describe.each(testCases)(`exports-snapshot/${pkgName}`, (pkgEntry) => {
+  const isDistExists = existsSync('dist')
+
+  it('dist should exist', () => {
     expect(isDistExists, 'dist directory does not exist, please run `bun run build` first').toBe(true)
   })
 
-  it.each(entries).if(isDistExists)(`${name} - %s - runtime`, (entry) => {
+  it.if(isDistExists)(`${pkgName}/${pkgEntry}/runtime`, () => {
     const api = generateApiSnapshot(process.cwd())
-    expect(api[entry]!.runtime).toMatchSnapshot()
+    expect(api[pkgEntry]?.runtime).toMatchSnapshot()
   })
 
-  it.each(entries).if(isDistExists)(`${name} - %s - dts`, (entry) => {
+  it.if(isDistExists)(`${pkgName}/${pkgEntry}/dts`, () => {
     const api = generateApiSnapshot(process.cwd())
-    expect(api[entry]!.dts).toMatchSnapshot()
+    expect(api[pkgEntry]?.dts).toMatchSnapshot()
   })
 })
