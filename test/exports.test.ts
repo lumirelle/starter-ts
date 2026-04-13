@@ -1,24 +1,22 @@
-import { YAML } from 'bun'
 import { describe, expect, it } from 'bun:test'
-import { fileURLToPath } from 'node:url'
-import { getPackageExportsManifest } from 'vitest-package-exports'
+import { existsSync } from 'node:fs'
+import { generateApiSnapshot } from 'tsnapi'
 import { name } from '../package.json'
 
+const isDistExists = existsSync('dist')
+
 describe('exports-snapshot', () => {
-  it(name, async () => {
-    const manifest = await getPackageExportsManifest({
-      importMode: 'src',
-      cwd: fileURLToPath(import.meta.url),
-      resolveSourcePath: (element: any) => {
-        let dist = ''
-        if (typeof element === 'object')
-          dist = element.default || element.require || element.import || ''
-        else
-          dist = element
-        return dist.replace('dist', 'src').replace(/\.[mc]?js$/, '')
-      },
-    })
-    // TODO: Workaround. Bun currently does not support file snapshot like Vitest, see https://github.com/oven-sh/bun/issues/13096
-    expect(YAML.stringify(manifest.exports, null, 2)).toMatchSnapshot()
+  it('dist should exist', async () => {
+    expect(isDistExists, 'dist directory does not exist, please run `bun run build` first').toBe(true)
+  })
+
+  it.if(isDistExists)(`${name} - runtime`, async () => {
+    const api = generateApiSnapshot(process.cwd())
+    expect(api['.']!.runtime).toMatchSnapshot()
+  })
+
+  it.if(isDistExists)(`${name} - dts`, async () => {
+    const api = generateApiSnapshot(process.cwd())
+    expect(api['.']!.dts).toMatchSnapshot()
   })
 })
