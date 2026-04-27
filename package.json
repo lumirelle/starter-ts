@@ -49,11 +49,11 @@
         "@arethetypeswrong/cli": "^0.18.2",
         "@lumirelle/oxlint-config": "^0.2.2",
         "eslint": "^10.2.1",
-        "eslint-plugin-oxlint": "^1.61.0",
-        "knip": "^6.6.1",
+        "eslint-plugin-oxlint": "^1.62.0",
+        "knip": "^6.7.0",
         "nano-staged": "^1.0.2",
-        "oxlint": "^1.61.0",
-        "oxlint-tsgolint": "^0.21.1",
+        "oxlint": "^1.62.0",
+        "oxlint-tsgolint": "^0.22.1",
         "publint": "^0.3.18"
       },
       "test": {
