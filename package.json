@@ -18,14 +18,14 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
       }
     },
     "./package.json": "./package.json"
   },
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist"
   ],
@@ -42,11 +42,11 @@
         "typescript": "^6.0.3"
       },
       "build": {
-        "bunup": "^0.16.31"
+        "tsdown": "^0.22.0"
       },
       "check": {
         "@antfu/eslint-config": "^9.0.0",
-        "@arethetypeswrong/cli": "^0.18.2",
+        "@arethetypeswrong/core": "^0.18.2",
         "@lumirelle/oxlint-config": "^0.4.0",
         "eslint": "^10.3.0",
         "eslint-plugin-oxlint": "^1.64.0",
@@ -67,28 +67,27 @@
   },
   "scripts": {
     "prepare": "simple-git-hooks",
-    "dev": "bunup --watch",
-    "build": "bunup --exports",
+    "dev": "tsdown --watch --tsconfig tsconfig.lib.json",
+    "build": "tsdown --tsconfig tsconfig.lib.json --publint --attw.profile esm-only",
     "start": "bun run ./src/index.ts",
     "lint": "bun run --parallel oxlint eslint",
     "lint:fix": "oxlint --fix && eslint --fix",
     "typecheck": "tsc --build --noEmit",
     "unused": "knip-bun",
-    "pubcheck": "bun run --parallel 'attw --pack --profile esm-only' publint",
-    "check": "bun run --parallel lint typecheck unused pubcheck",
+    "check": "bun run --parallel lint typecheck unused",
+    "pretest": "bun run build",
     "test": "bun test",
-    "prerelease": "bun run build && bun run --parallel check test",
+    "prerelease": "bun run --parallel check test",
     "release": "bumpp"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:check",
-    "@arethetypeswrong/cli": "catalog:check",
+    "@arethetypeswrong/core": "catalog:check",
     "@lumirelle/oxlint-config": "catalog:check",
     "@lumirelle/tsconfig": "catalog:types",
     "@types/node": "catalog:types",
     "bumpp": "catalog:dev",
     "bun-types": "catalog:types",
-    "bunup": "catalog:build",
     "eslint": "catalog:check",
     "eslint-plugin-oxlint": "catalog:check",
     "knip": "catalog:check",
@@ -97,6 +96,7 @@
     "oxlint-tsgolint": "catalog:check",
     "publint": "catalog:check",
     "simple-git-hooks": "catalog:check",
+    "tsdown": "catalog:build",
     "tsnapi": "catalog:test",
     "typescript": "catalog:types"
   },
