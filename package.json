@@ -31,6 +31,9 @@
   "workspaces": {
     "packages": [],
     "catalogs": {
+      "self": {
+        "pkg-placeholder": "file:."
+      },
       "dev": {
         "bumpp": "^11.1.0"
       },
@@ -94,6 +97,7 @@
     "nano-staged": "catalog:check",
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
+    "pkg-placeholder": "catalog:self",
     "publint": "catalog:check",
     "simple-git-hooks": "catalog:check",
     "tsnapi": "catalog:test",

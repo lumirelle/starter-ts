@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'bun:test'
+import { one } from 'pkg-placeholder'
 
 describe('test', () => {
   it('should pass', () => {
-    expect(1).toEqual(1)
+    expect(one).toEqual(1)
   })
 })
