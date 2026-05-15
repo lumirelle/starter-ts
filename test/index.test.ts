@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'bun:test'
+import { one, two } from '../src'
 
 describe('test', () => {
   it('should pass', () => {
-    expect(1).toEqual(1)
+    expect(one).toEqual(1)
+    expect(two).toEqual(2)
   })
 })
