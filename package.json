@@ -42,20 +42,19 @@
         "typescript": "^6.0.3"
       },
       "build": {
-        "tsdown": "^0.22.0"
+        "tsdown": "^0.22.1"
       },
       "check": {
         "@antfu/eslint-config": "^9.0.0",
-        "@arethetypeswrong/core": "^0.18.2",
-        "@lumirelle/oxlint-config": "^0.6.0",
-        "eslint": "^10.4.0",
-        "eslint-plugin-oxlint": "^1.66.0",
-        "knip": "^6.14.1",
+        "@arethetypeswrong/core": "^0.18.3",
+        "@lumirelle/oxlint-config": "^0.7.0",
+        "eslint": "^10.4.1",
+        "eslint-plugin-oxlint": "^1.68.0",
+        "knip": "^6.15.0",
         "nano-staged": "^1.0.2",
-        "oxlint": "^1.66.0",
+        "oxlint": "^1.68.0",
         "oxlint-tsgolint": "^0.23.0",
-        "publint": "^0.3.21",
-        "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657"
+        "publint": "^0.3.21"
       },
       "test": {
         "tsnapi": "^0.3.3"
@@ -66,19 +65,7 @@
     "access": "public"
   },
   "scripts": {
-    "prepare": "simple-git-hooks",
-    "dev": "tsdown --watch --tsconfig tsconfig.lib.json",
-    "build": "tsdown --tsconfig tsconfig.lib.json --publint --attw.profile esm-only",
-    "start": "bun run ./src/index.ts",
-    "lint": "bun run --parallel oxlint eslint",
-    "lint:fix": "oxlint --fix && eslint --fix",
-    "typecheck": "tsc --build --noEmit",
-    "unused": "knip-bun",
-    "check": "bun run --parallel lint typecheck unused",
-    "pretest": "bun run build",
-    "test": "bun test",
-    "prerelease": "bun run --parallel check test",
-    "release": "bumpp"
+    "prepare": "mise run prepare"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:check",
@@ -95,17 +82,12 @@
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
     "publint": "catalog:check",
-    "simple-git-hooks": "catalog:check",
     "tsdown": "catalog:build",
     "tsnapi": "catalog:test",
     "typescript": "catalog:types"
   },
   "overrides": {
-    "fflate": "0.8.2",
     "typescript": "catalog:types"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "bunx nano-staged"
   },
   "nano-staged": {
     "*": [
