@@ -1,5 +1,7 @@
 import type { KnipConfig } from 'knip'
 
 export default {
-  ignoreDependencies: ['@lumirelle/oxlint-config'],
+  entry: ['test/**/*.{ts,js}'],
+  ignoreBinaries: ['mise'],
+  ignoreDependencies: ['@lumirelle/oxlint-config', 'bumpp', 'nano-staged'],
 } satisfies KnipConfig
