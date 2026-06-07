@@ -23,13 +23,6 @@ local linters = new Mapping<String, Step> {
       check = "knip-bun --no-progress --directory {{workspace}}"
       fix = "knip-bun --fix --no-progress --directory {{workspace}}"
     }
-
-    ["attw"] {
-      check = "attw --pack --profile esm-only"
-    }
-    ["publint"] {
-      check = "publint"
-    }
 }
 
 hooks {
