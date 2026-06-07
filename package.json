@@ -36,29 +36,23 @@
   "workspaces": {
     "packages": [],
     "catalogs": {
-      "dev": {
-        "bumpp": "^11.1.0"
-      },
       "types": {
         "@lumirelle/tsconfig": "^0.1.4",
         "@types/bun": "^1.3.14",
-        "@types/node": "^25.9.1",
+        "@types/node": "^25.9.2",
         "typescript": "^6.0.3"
       },
       "build": {
-        "tsdown": "^0.22.1"
+        "tsdown": "^0.22.2"
       },
       "check": {
         "@antfu/eslint-config": "^9.0.0",
-        "@arethetypeswrong/core": "^0.18.3",
         "@lumirelle/oxlint-config": "^0.7.0",
         "eslint": "^10.4.1",
         "eslint-plugin-oxlint": "^1.68.0",
-        "knip": "^6.15.0",
-        "nano-staged": "^1.0.2",
+        "knip": "^6.16.1",
         "oxlint": "^1.68.0",
-        "oxlint-tsgolint": "^0.23.0",
-        "publint": "^0.3.21"
+        "oxlint-tsgolint": "^0.23.0"
       },
       "test": {
         "@vitest/coverage-v8": "^4.1.8",
@@ -70,35 +64,18 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "prepare": "mise run prepare",
-    "dev": "tsdown --tsconfig tsconfig.lib.json --watch",
-    "build": "tsdown --tsconfig tsconfig.lib.json --publint --attw.profile esm-only",
-    "start": "bun run ./src/index.ts",
-    "oxlint": "oxlint --config .oxlintrc.json",
-    "eslint": "eslint",
-    "typecheck": "tsc --build --noEmit",
-    "unused": "knip-bun",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "release": "bumpp"
-  },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:check",
-    "@arethetypeswrong/core": "catalog:check",
     "@lumirelle/oxlint-config": "catalog:check",
     "@lumirelle/tsconfig": "catalog:types",
     "@types/bun": "catalog:types",
     "@types/node": "catalog:types",
     "@vitest/coverage-v8": "catalog:test",
-    "bumpp": "catalog:dev",
     "eslint": "catalog:check",
     "eslint-plugin-oxlint": "catalog:check",
     "knip": "catalog:check",
-    "nano-staged": "catalog:check",
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
-    "publint": "catalog:check",
     "tsdown": "catalog:build",
     "tsnapi": "catalog:test",
     "typescript": "catalog:types",
@@ -106,11 +83,5 @@
   },
   "overrides": {
     "typescript": "catalog:types"
-  },
-  "nano-staged": {
-    "*": [
-      "oxlint --no-error-on-unmatched-pattern",
-      "eslint"
-    ]
   }
 }
