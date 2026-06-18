@@ -35,7 +35,7 @@ run = "tsdown --tsconfig tsconfig.lib.json --watch"
 run = "tsdown --tsconfig tsconfig.lib.json --publint"
 
 [tasks.start]
-depends = "bun run ./src/index.ts"
+run = "bun run ./src/index.ts"
 
 [tasks.check]
 depends = "build"
