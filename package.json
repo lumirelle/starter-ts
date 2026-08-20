@@ -40,9 +40,6 @@
     "node": ">22",
     "bun": ">1"
   },
-  "workspaces": {
-    "packages": []
-  },
   "publishConfig": {
     "access": "public"
   },
