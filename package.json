@@ -2,7 +2,7 @@
   "name": "pkg-placeholder",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "nub@0.7.5",
+  "packageManager": "nub@0.9.6",
   "description": "_description_",
   "author": "Lumirelle <shabbyacc@outlook.com>",
   "license": "MIT",
@@ -32,7 +32,7 @@
   "devEngines": {
     "packageManager": {
       "name": "nub",
-      "version": "^0.7.5",
+      "version": "^0.9.6",
       "onFail": "ignore"
     }
   },
