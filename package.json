@@ -49,13 +49,13 @@
     "@lumirelle/oxlint-config": "^0.14.0",
     "@lumirelle/tsconfig": "^0.1.6",
     "@types/node": "^26.6.5",
-    "@vitest/coverage-v8": "^5.0.3",
+    "@vitest/coverage-v8": "^5.0.4",
     "bumpp": "^12.3.0",
     "changelogithub": "^15.0.5",
     "eslint": "^10.12.0",
-    "eslint-plugin-oxlint": "^1.87.0",
+    "eslint-plugin-oxlint": "^1.88.0",
     "knip": "^6.41.0",
-    "oxlint": "^1.87.0",
+    "oxlint": "^1.88.0",
     "oxlint-tsgolint": "^7.0.2004",
     "pkg-pr-new": "^0.0.91",
     "publint": "^0.3.25",
@@ -63,7 +63,7 @@
     "tsdown": "^0.23.1",
     "tsnapi": "^1.5.0",
     "typescript": "npm:typescript-native-bridge@^6.0.3-bridge.18.tsgo.7.0.2",
-    "vitest": "^5.0.3"
+    "vitest": "^5.0.4"
   },
   "overrides": {
     "typescript": "$typescript"
