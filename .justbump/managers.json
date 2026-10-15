@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "verify": "run `mise run check` and `mise run test`; confirm the CLI still starts and the build passes",
   "managers": [
     {
@@ -19,14 +19,14 @@
       "name": "nub",
       "kind": "package",
       "detect": ["nub.lock", "packageManager=nub"],
-      "note": "taze declared in devDependencies, so the Node lane is available; --exclude nub stops taze resolving the packageManager field (nub@…) against the unrelated npm package `nub` — the real nub is owned by mise",
+      "note": "taze declared in devDependencies, so the Node lane is available; -x nub stops taze resolving the packageManager field (nub@…) against the unrelated npm package `nub` — the real nub is owned by mise",
       "commands": {
         "check": "nub outdated --json",
         "bump": {
-          "default": "nub exec taze -w --no-interactive --no-node-version --no-github-actions --exclude nub --concurrency 2 --request-timeout 30000",
-          "patch": "nub exec taze patch -w --no-interactive --no-node-version --no-github-actions --exclude nub --concurrency 2 --request-timeout 30000",
-          "minor": "nub exec taze minor -w --no-interactive --no-node-version --no-github-actions --exclude nub --concurrency 2 --request-timeout 30000",
-          "major": "nub exec taze major -w --no-interactive --no-node-version --no-github-actions --exclude nub --concurrency 2 --request-timeout 30000"
+          "default": "nub exec taze -x nub -w --no-interactive --no-node-version --no-github-actions --concurrency 2 --request-timeout 30000",
+          "patch": "nub exec taze patch -x nub -w --no-interactive --no-node-version --no-github-actions --concurrency 2 --request-timeout 30000",
+          "minor": "nub exec taze minor -x nub -w --no-interactive --no-node-version --no-github-actions --concurrency 2 --request-timeout 30000",
+          "major": "nub exec taze major -x nub -w --no-interactive --no-node-version --no-github-actions --concurrency 2 --request-timeout 30000"
         },
         "refresh": [
           "node --input-type=commonjs -e \"require('fs').rmSync('node_modules',{recursive:true,force:true})\"",
