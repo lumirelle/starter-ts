@@ -1,7 +1,7 @@
 [tools]
 # Environments
 node = 'latest'
-'github:nubjs/nub' = 'latest'
+nub = 'latest'
 # Linters & Formatters
 hk = 'latest'
 stylua = 'latest'
@@ -16,9 +16,6 @@ auto = true
 
 [env]
 _.path = ['{{config_root}}/node_modules/.bin']
-
-# See https://github.com/webpro-nl/knip/issues/1813 & https://github.com/oxc-project/oxc/issues/11834
-KNIP_DISABLE_RAW_TRANSFER = 1
 
 [task_config.input_groups]
 deps = ["package.json", "nub.lock"]
