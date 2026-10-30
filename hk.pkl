@@ -20,11 +20,13 @@ steps {
         "*.tsx",
         // Configurations
         "*.json",
+        "*.json5",
         "*.jsonc",
         "*.yaml",
         "*.yml",
         "*.toml",
         // Documentations
+        "*.markdown",
         "*.md",
         "*.mdc",
         "*.mdx",
@@ -41,8 +43,12 @@ steps {
     }
     depends = List("oxlint")
   }
+  ["oxfmt"] = (Builtins.oxfmt) {
+    // Formatting runs last: ESLint's fixes are the ones that can leave a file unformatted, and no
+    // rule of this repository's config reports what Oxfmt would only reformat.
+    depends = List("eslint")
+  }
   ["tsc"] = Builtins.tsc
-  // Unused code
   ["knip"] = (Builtins.knip) {
     // Disable knip auto-fix, because it's dangerous
     fix = null
@@ -64,7 +70,6 @@ steps {
       effect = "write"
     }
   }
-  // Publish configurations
   ["attw"] {
     check = new CommandSpec {
       command = new Command {

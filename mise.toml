@@ -22,9 +22,28 @@ KNIP_DISABLE_RAW_TRANSFER = 1
 
 [task_config.input_groups]
 deps = ["package.json", "nub.lock"]
-src = ["src", "tsconfig.lib.json"]
-check = ["*.js", "*.mjs", "*.cjs", "*.jsx", "*.ts", "*.mts", "*.cts", "*.tsx", "*.json", "*.jsonc", "*.yaml", "*.yml", "*.toml", "*.md", "*.mdc", "*.mdx", "*.lua", "hk.pkl"]
-test = ["test", "dist"]
+src = ["src/**/*", "tsconfig.lib.json"]
+check = [
+  "**/*.js",
+  "**/*.mjs",
+  "**/*.cjs",
+  "**/*.jsx",
+  "**/*.ts",
+  "**/*.mts",
+  "**/*.cts",
+  "**/*.tsx",
+  "**/*.json",
+  "**/*.jsonc",
+  "**/*.yaml",
+  "**/*.yml",
+  "**/*.toml",
+  "**/*.md",
+  "**/*.mdc",
+  "**/*.mdx",
+  "**/*.lua",
+  "hk.pkl",
+]
+test = ["test/**/*", "dist/**/*"]
 
 [tasks.dev]
 description = "Run the development build with hot reloading."
