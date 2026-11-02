@@ -1,4 +1,4 @@
-import type { Options } from '@lumirelle/linter-config/eslint'
+import type { Options } from '@lumirelle/linter-config'
 
 /**
  * Linter options for both ESLint & Oxlint.
@@ -10,4 +10,5 @@ export default {
     typeAware: true,
     typeCheck: true,
   },
+  ignores: ['.agents/**', '.claude/**'],
 } satisfies Options
