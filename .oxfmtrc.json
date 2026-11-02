@@ -8,5 +8,5 @@
   "objectWrap": "preserve",
   "experimentalOperatorPosition": "start",
   "sortPackageJson": false,
-  "ignorePatterns": [".agents/**", "test/__snapshots__/**"],
+  "ignorePatterns": [".agents/**", ".claude/**", "test/__snapshots__/**"]
 }

@@ -1,3 +1,5 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+
 [tools]
 # Environments
 node = 'latest'
@@ -20,31 +22,6 @@ _.path = ['{{config_root}}/node_modules/.bin']
 # See https://github.com/webpro-nl/knip/issues/1813 & https://github.com/oxc-project/oxc/issues/11834
 KNIP_DISABLE_RAW_TRANSFER = 1
 
-[task_config.input_groups]
-deps = ["package.json", "nub.lock"]
-src = ["src/**/*", "tsconfig.lib.json"]
-check = [
-  "**/*.js",
-  "**/*.mjs",
-  "**/*.cjs",
-  "**/*.jsx",
-  "**/*.ts",
-  "**/*.mts",
-  "**/*.cts",
-  "**/*.tsx",
-  "**/*.json",
-  "**/*.jsonc",
-  "**/*.yaml",
-  "**/*.yml",
-  "**/*.toml",
-  "**/*.md",
-  "**/*.mdc",
-  "**/*.mdx",
-  "**/*.lua",
-  "hk.pkl",
-]
-test = ["test/**/*", "dist/**/*"]
-
 [tasks.dev]
 description = "Run the development build with hot reloading."
 run = "tsdown --tsconfig tsconfig.lib.json --watch"
@@ -52,9 +29,6 @@ run = "tsdown --tsconfig tsconfig.lib.json --watch"
 [tasks.build]
 description = "Run the production build."
 run = "tsdown --tsconfig tsconfig.lib.json"
-sources = ["@group:deps", "@group:src"]
-outputs = ["dist"]
-cache = { enabled = true }
 
 [tasks.start]
 description = "Run the source code."
@@ -69,10 +43,7 @@ arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
 run = '''
 hk check {{ "--staged" if usage.staged else "--all" }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
 '''
-sources = ["@group:deps", "@group:check"]
-outputs = []
 depends = "build"
-cache = { enabled = true, command_inputs = ["hk --version"] }
 
 [tasks.fix]
 description = 'Fix all check issues.'
@@ -83,10 +54,7 @@ arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
 run = '''
 hk fix {{ "--staged" if usage.staged else "--all" }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
 '''
-sources = ["@group:deps", "@group:check"]
-outputs = []
 depends = "build"
-cache = { enabled = true, command_inputs = ["hk --version"] }
 
 [tasks.test]
 description = "Run tests."
@@ -98,9 +66,6 @@ arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
 run = '''
 vitest {{ '' if usage.watch else 'run' }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
 '''
-sources = ["@group:deps", "@group:src", "@group:test"]
-outputs = []
-cache = { enabled = true, command_inputs = ["node --version"] }
 
 [tasks.prerelease]
 description = 'Prepare for release.'
