@@ -10,5 +10,4 @@ export default {
     typeAware: true,
     typeCheck: true,
   },
-  ignores: ['.agents/**', '.claude/**'],
 } satisfies Options
