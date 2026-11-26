@@ -1,4 +1,4 @@
-# pkg-placeholder
+# Starter for TypeScript
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -11,13 +11,13 @@
 >
 > This is a personal fork of [antfu/starter-ts](https://github.com/antfu/starter-ts) with some customizations.
 
-_description_
+_{description}_
 
 ## Note for Developers
 
 This starter recommends using [NPM Trusted Publisher](https://github.com/e18e/ecosystem-issues/issues/201), where the release is done on CI to ensure the security of the packages.
 
-To do so, you need to run `nub publish` manually for the very first time to create the package on npm, and then go to `https://www.npmjs.com/package/<your-package-name>/access` to set the connection to your GitHub repo.
+To do so, you need to run `nub publish` manually for the very first time to create the package on npm, and then go to `https://www.npmjs.com/package/{your_package_name}/access` to set the connection to your GitHub repo.
 
 Then for the future releases, you can run `mise run release` to do the release and the GitHub Actions will take care of the release process.
 
@@ -43,7 +43,7 @@ Then for the future releases, you can run `mise run release` to do the release a
 [bundle-href]: https://bundlephobia.com/result?p=pkg-placeholder
 [jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=18181B&colorB=F0DB4F
 [jsdocs-href]: https://www.jsdocs.io/package/pkg-placeholder
-[codecov-src]: https://img.shields.io/codecov/c/gh/lumirelle/pkg-placeholder/main?style=flat&colorA=18181B&colorB=F0DB4F
-[codecov-href]: https://codecov.io/gh/lumirelle/pkg-placeholder
-[license-src]: https://img.shields.io/github/license/lumirelle/pkg-placeholder.svg?style=flat&colorA=18181B&colorB=F0DB4F
-[license-href]: https://github.com/lumirelle/pkg-placeholder/blob/main/LICENSE.md
+[codecov-src]: https://img.shields.io/codecov/c/gh/lumirelle/starter-ts/main?style=flat&colorA=18181B&colorB=F0DB4F
+[codecov-href]: https://codecov.io/gh/lumirelle/starter-ts
+[license-src]: https://img.shields.io/github/license/lumirelle/starter-ts.svg?style=flat&colorA=18181B&colorB=F0DB4F
+[license-href]: https://github.com/lumirelle/starter-ts/blob/main/LICENSE.md
